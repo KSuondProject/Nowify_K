@@ -19,10 +19,10 @@
         <h3 class="now-playing__year" v-text="player.trackYear"></h3>
       </div>
     </div>
-    <div v-else class="now-playing" :class="getNowPlayingClass()">
+    <div v-else class="now-playing" :class="()">
       <h2 class="now-playing__idle-heading">Spotify in attesa di pezzoni 😎</h2>
-      <h1 class="now-playing__idle-heading" v-text="player.ora"></h1>
-      <h2 class="now-playing__idle-heading" v-text="player.date"></h2>
+      <h1 class="now-playing__idle-heading" ora></h1>
+      <h2 class="now-playing__idle-heading" date"></h2>
     </div>
   </div>
 </template>
@@ -48,7 +48,9 @@ export default {
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: []
+      swatches: [],
+      date: '',
+      ora: ''
     }
   },
 
