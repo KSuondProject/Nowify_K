@@ -21,8 +21,8 @@
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <h2 class="now-playing__idle-heading">Spotify in attesa di pezzoni 😎</h2>
+      <h1 class="now-playing__idle-heading" v-text="player.ora"></h1>
       <h2 class="now-playing__idle-heading" v-text="player.date"></h2>
-      <h2 class="now-playing__idle-heading" v-text="player.ora"></h2>
     </div>
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
      * get the current played track.
      */
     time_event = new Date(),
-    date = time_event.toLocaleString('it-IT', { timeZone: 'CET', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})),
+    date = time_event.toLocaleString('it-IT', { timeZone: 'CET', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}),
     ora = (time_event.toLocaleTimeString('it-IT')),
     async getNowPlaying() {
       let data = {}
