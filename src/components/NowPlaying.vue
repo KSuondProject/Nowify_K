@@ -75,9 +75,9 @@ export default {
      * Make the network request to Spotify to
      * get the current played track.
      */
-    time_event = new Date();
-    date = time_event.toLocaleString('it-IT', { timeZone: 'CET', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}));
-    ora = (time_event.toLocaleTimeString('it-IT'));
+    time_event = new Date(),
+    date = time_event.toLocaleString('it-IT', { timeZone: 'CET', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})),
+    ora = (time_event.toLocaleTimeString('it-IT')),
     async getNowPlaying() {
       let data = {}
 
