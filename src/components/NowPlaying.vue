@@ -20,7 +20,7 @@
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
-      <font size="55"> <h1 class="now-playing__idle-heading"> {{ currentDate }} </h1></font>
+      <font size="55"> <h1 class="now-playing__idle-heading"> {{ currentTime }} </h1></font>
       <h4 class="now-playing__idle-heading"> {{ currentDate }}</h4>
     </div>
   </div>
@@ -83,11 +83,11 @@ export default {
       // Get the current date and time
       const now = new Date();
       // Format the date and time
-      const formattedDate = now.toLocaleString('it-IT',{timeZone: 'CET', weekday: 'long', month: 'long', day: 'numeric'});
-      const formattedTime = now.toLocaleTimeString('it-IT');
+      const formattedDate = now.toLocaleString('it-IT', {timeZone: 'CET', weekday: 'long', month: 'long', day: 'numeric'});
+      const formattedTime = now.toLocaleTimeString('it-IT', {hours: 'numeric', minutes:'numeric'});
       // Update the currentDatetime property
-      this.currentDate = '${formattedTime}  + \n + ${formattedDate}';
-      //this.currentDate = formattedDate;
+      this.currentDate = formattedTime;
+      this.currentDate = formattedDate;
       //this.currentTime = formattedTime
     },
 
