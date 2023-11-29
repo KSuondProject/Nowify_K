@@ -20,7 +20,8 @@
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
-      <h1 class="now-playing__idle-heading"> {{ currentTime }} <br></h1>
+      <font size="60"> <h1 class="now-playing__idle-heading"> {{ currentTime }} </h1></font>
+      <br>
       <h4 class="now-playing__idle-heading"> {{ currentDate }}</h4>
     </div>
   </div>
