@@ -21,7 +21,7 @@
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
       <font size="55"> <h1 class="now-playing__idle-heading"> {{ currentTime }} </h1></font>
-      <h3 class="now-playing__idle-heading"> {{ currentDate }}</h3>
+      <h2 class="now-playing__idle-heading"> {{ currentDate }}</h2>
     </div>
   </div>
 </template>
