@@ -84,7 +84,7 @@ export default {
       const now = new Date();
       // Format the date and time
       const formattedDate = now.toLocaleString('it-IT', {timeZone: 'CET', weekday: 'long', month: 'long', day: 'numeric'});
-      const formattedTime = now.toLocaleTimeString('it-IT', {hour:'numeric', minute:'numeric'});
+      const formattedTime = now.toLocaleTimeString('it-IT');
       // Update the currentDatetime property
       this.currentDate = formattedTime;
       this.currentDate = formattedDate;
