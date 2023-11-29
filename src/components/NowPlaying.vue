@@ -88,8 +88,9 @@ export default {
       const formattedDate = now.toLocaleString('it-IT',{timeZone: 'CET', weekday: 'long', month: 'long', day: 'numeric'});
       const formattedTime = now.toLocaleTimeString('it-IT');
       // Update the currentDatetime property
-      this.currentDate = formattedDate;
-      this.currentTime = formattedTime
+      this.currentDate = formattedTime + "/n" + formattedDate;
+      //this.currentDate = formattedDate;
+      //this.currentTime = formattedTime
     },
 
     async getNowPlaying() {
