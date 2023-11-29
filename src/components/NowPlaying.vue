@@ -87,7 +87,7 @@ export default {
       const formattedTime = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       // Update the currentDatetime property
       this.currentDate = formattedDate;
-      //this.currentTime = formattedTime
+      this.currentTime = formattedTime
     },
 
     async getNowPlaying() {
