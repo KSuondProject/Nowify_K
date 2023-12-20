@@ -20,7 +20,8 @@
       </div>
     </div>
     <div v-else class="now-playing" :class="getNowPlayingClass()">
-      <h2 class="now-playing__idle-heading">Spotify in attesa di pezzoni 😎</h2>
+      <font size="55"> <h4 class="now-playing__idle-heading"> {{ currentTime }} </h4></font>
+      <h1 class="now-playing__idle-heading"> {{ currentDate }}</h1>
     </div>
   </div>
 </template>
@@ -46,7 +47,9 @@ export default {
       playerResponse: {},
       playerData: this.getEmptyPlayer(),
       colourPalette: '',
-      swatches: []
+      swatches: [],
+      currentDate: '',
+      currentTime: ''
     }
   },
 
@@ -61,7 +64,9 @@ export default {
   },
 
   mounted() {
-    this.setDataInterval()
+    this.setDataInterval();
+    this.updateDatetime();
+    setInterval(this.updateDatetime, 1000);
   },
 
   beforeDestroy() {
@@ -73,6 +78,18 @@ export default {
      * Make the network request to Spotify to
      * get the current played track.
      */
+
+     updateDatetime() {
+      // Get the current date and time
+      const now = new Date();
+      // Format the date and time
+      const formattedDate = now.toLocaleString('it-IT', {timeZone: 'CET', weekday: 'long', month: 'long', day: 'numeric'});
+      const formattedTime = now.toLocaleTimeString('it-IT', { hour: "2-digit", minute: "2-digit" });
+      // Update the currentDatetime property
+      this.currentDate = formattedDate;
+      this.currentTime = formattedTime
+    },
+
     async getNowPlaying() {
       let data = {}
 
