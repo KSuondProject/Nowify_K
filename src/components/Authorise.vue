@@ -3,7 +3,7 @@
     <h1 class="authorise__heading">Krokify Pro</h1>
 
     <p class="authorise__copy">
-     Loggati, al resto ci penso io 🔝🔝
+     Loggati, al resto ci penso io :)
     </p>
 
     <button
@@ -14,7 +14,7 @@
     </button>
 
     <p class="authorise__credit">
-      <a href="https://github.com/jonashcroft/Nowify">View on GitHub</a>
+      <a href="https://github.com/jonashcroft/Nowify">Onore al creatore</a>
     </p>
   </div>
 </template>
@@ -38,7 +38,10 @@ export default {
   data() {
     return {}
   },
-
+  created () {
+    this.reload_page();
+    this.timer = setInterval(this.reload_page, 30000);
+    },
   computed: {},
 
   mounted() {
@@ -61,6 +64,10 @@ export default {
      * Spotify to grant app consent, user will
      * be redirected back to the app.
      */
+    reload_page() {
+      window.location.reload();
+    },
+    
     initAuthorise() {
       this.setAuthUrl()
       window.location.href = `${this.endpoints.auth}?${searchParams.toString()}`
