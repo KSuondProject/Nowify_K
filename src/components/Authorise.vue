@@ -38,10 +38,6 @@ export default {
   data() {
     return {}
   },
-  created () {
-    this.reload_page();
-    this.timer = setInterval(this.reload_page, 300000);
-    },
   computed: {},
 
   mounted() {
@@ -64,9 +60,7 @@ export default {
      * Spotify to grant app consent, user will
      * be redirected back to the app.
      */
-    reload_page() {
-      window.location.reload();
-    },
+
     
     initAuthorise() {
       this.setAuthUrl()
@@ -210,7 +204,7 @@ export default {
       return `${this.endpoints.auth}?${searchParams.toString()}`
     }
   },
-
+  
   watch: {
     /**
      * Watch authorisation code.
