@@ -40,7 +40,7 @@ export default {
   },
   created () {
     this.reload_page();
-    this.timer = setInterval(this.reload_page, 30000);
+    this.timer = setInterval(this.reload_page, 300000);
     },
   computed: {},
 
